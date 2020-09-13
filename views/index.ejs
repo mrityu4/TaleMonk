@@ -1,0 +1,32 @@
+<%- include('partials/header'); -%>
+<div class="container">
+  <header class="jumbotron">
+    <div class="container">
+      <h1>Tale Monk</h1>
+      <p>
+        Welcome to our collection of hand-picked Stories
+      </p>
+    </div>
+  </header>
+  <!-- https://stackoverflow.com/questions/59106739/syntaxerror-unexpected-indentifier-while-compiling-ejs-problem -->
+  <div class="row text-center thumbnails" style="display: flex; flex-wrap: wrap">
+    <% stories.forEach(function(story){ %>
+
+    <div class="col-md-4 col-sm-6">
+      <div class="img-fluid">
+        <img src="<%=story.url%>" alt="" class="img-thumbnail" />
+      </div>
+
+      <div class="caption">
+        <h4><%=story.name%></h4>
+      </div>
+      <div class="caption">
+        <button>
+          <a href="/<%=story._id%>   ">READ</a>
+        </button>
+      </div>
+
+    </div>
+    <% }); %> <%- include('partials/footer'); -%>
+  </div>
+</div>
